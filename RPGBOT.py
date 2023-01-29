@@ -390,8 +390,6 @@ async def commands(context):
         stats_dict = {"2": [5,20,100,10,20,10,100,1.0,1.0], "1": [20,5,150,20,20,10,50,1.0,1.0], "3": [10,10,100,10,10,20,100,1.0,1.0]}
         await context.channel.send("You have selected: {}".format(class_dict[choice.content]))
         await context.channel.send("Welcome to random RPG! Use .menu for list of commands.")
-        [redacted malicious code]
-        #RVCTF{good_job_investigator}
         con.execute("INSERT INTO user_stats(Physical_Attack, Magic_Power, Health_Points, Physical_Defense, Magic_Resistance, Agility, Mana, Physical_Strength, Magic_Potential, user_id, max_HP) VALUES(?,?,?,?,?,?,?,?,?,?,?)",(stats_dict[choice.content][0],stats_dict[choice.content][1],stats_dict[choice.content][2],stats_dict[choice.content][3],stats_dict[choice.content][4],stats_dict[choice.content][5],stats_dict[choice.content][6],stats_dict[choice.content][7],stats_dict[choice.content][8],member.id,stats_dict[choice.content][2]))
         con.execute("INSERT INTO users(user_id, user_lvl, user_xp, user_class, gold, crystal_shards, bank) VALUES(?, ?, ?, ?, ?, ?, ?)", (member.id, 1, 0, class_dict[choice.content][0],400 ,0, 0))
         con.execute("INSERT INTO user_equipment(user_id) VALUES(?)", (member.id,))
