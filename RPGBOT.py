@@ -734,14 +734,14 @@ def Reward(enemy_rarity, enemy_biome, user_id):
     elif enemy_biome == 'dungeon ruins':
         difficulty = 4
     if enemy_rarity == 'COMMON':
-        gold = random.randint(40,70)
-        exp = random.randint(20,40)
+        gold = random.randint(50,70)
+        exp = random.randint(30,40)
     elif enemy_rarity == 'UNCOMMON':
-        gold = random.randint(110,150)
-        exp = random.randint(60,90)
+        gold = random.randint(120,150)
+        exp = random.randint(70,90)
     elif enemy_rarity == 'RARE':
-        gold = random.randint(280,340)
-        exp = random.randint(120,160)
+        gold = random.randint(290,340)
+        exp = random.randint(130,160)
     final_exp = exp*difficulty
     final_gold = gold*difficulty
     con.execute("UPDATE users SET gold = gold + ?, user_xp = user_xp + ? WHERE user_id = ?", (final_gold, final_exp, user_id))
