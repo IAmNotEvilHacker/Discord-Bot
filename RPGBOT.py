@@ -710,7 +710,7 @@ async def venture(context):
             pass
         else:
             #Enemy wins
-            await context.channel.send("bruh RIP you died. trash.")
+            await context.channel.send("you died.")
             con.execute("UPDATE user_stats SET Health_Points = ? WHERE user_id = ?", (20,data1[9],))
             con.execute("UPDATE users SET gold = 0 WHERE user_id = ?",(data1[9],))
             db.commit()
@@ -732,14 +732,14 @@ def Reward(enemy_rarity, enemy_biome, user_id):
     elif enemy_biome == 'dungeon ruins':
         difficulty = 4
     if enemy_rarity == 'COMMON':
-        gold = random.randint(50,70)
-        exp = random.randint(30,40)
+        gold = random.randint(50,75)
+        exp = random.randint(30,45)
     elif enemy_rarity == 'UNCOMMON':
-        gold = random.randint(120,150)
-        exp = random.randint(70,90)
+        gold = random.randint(120,160)
+        exp = random.randint(70,95)
     elif enemy_rarity == 'RARE':
-        gold = random.randint(290,340)
-        exp = random.randint(130,160)
+        gold = random.randint(290,345)
+        exp = random.randint(130,165)
     final_exp = exp*difficulty
     final_gold = gold*difficulty
     con.execute("UPDATE users SET gold = gold + ?, user_xp = user_xp + ? WHERE user_id = ?", (final_gold, final_exp, user_id))
