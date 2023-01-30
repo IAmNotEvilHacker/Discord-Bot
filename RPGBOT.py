@@ -584,7 +584,7 @@ def bot1(position, enemy): #standard brainless / melee
         return f"Move right {int(enemy[3].split()[0])}"
 
 def bot2(position, enemy): #slightly smarter ranged, moves away at 6m
-    if int(abs(position[0] - position[1])) < 7:
+    if int(abs(position[0] - position[1])) < 8:
         if int(position[1] - position[0]) > 0:
             return f"Move right {int(enemy[3].split()[0])}"
         else:
